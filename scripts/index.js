@@ -2,7 +2,7 @@ $(document).ready(function($) {
 	function viewModel(){
 		var self = this;
 		self.produtos = ko.observableArray(); 
-		self.Editable = ko.observable(false); 
+		self.loading = ko.observable(false);
 		// self.produtos = ko.observableArray([
 		// 	{name: 'Iphone', description: 'celular'},
 		// 	{name: 'Galaxy', description: 'celular'},
@@ -16,7 +16,8 @@ $(document).ready(function($) {
 		self.addProduto = function(){
 	        self.produtos.push({
 	            name: $('#nomeProd').val(),
-	            description: $('#descProd').val()
+	            description: $('#descProd').val(),
+	            editable: ko.observable(false)
 	        });
 		}
 
@@ -24,8 +25,17 @@ $(document).ready(function($) {
 			self.produtos.remove(this);
 		}
 
-		self.editProduto = function () {
-	        self.Editable(!self.Editable());
+		self.editProduto = function(index, data, event) {
+			this.loading(true);
+			var produtosTemp = this.produtos();
+			produtosTemp[index] = data;
+			produtosTemp[index].editable(false);
+			this.produtos(produtosTemp);
+			this.loading(false);
+		}
+
+		self.changeProductState = function () {
+	        this.editable(true);
 	    };
 	}
 

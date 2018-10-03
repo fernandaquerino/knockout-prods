@@ -41,6 +41,8 @@
 					<button class="cadastrar" data-bind="click: addProduto">Cadastrar</button>
 				</div>
 			</div>
+
+			<!-- ko ifnot: loading() -->
 			<div class="list">
 				<h1>Lista de Produtos</h1>
 				<span class="qtds">Você tem <span data-bind="text: produtos().length"></span> produtos na sua lista</span>
@@ -53,22 +55,33 @@
 				            <th style="width: 15%;">Ações</th>
 				        </tr>
 				    </thead>
-				    <tbody data-bind="foreach: produtos">
+
+				    <tbody data-bind="foreach: produtos()">
 				    	<tr>
 				    		<td data-bind="text: $index"></td>
 				    		<td>
 				    			<div data-bind="text: name"></div>
-                				<input type="text" data-bind="value: name, valueUpdate: 'afterkeydown', visible: $parent.Editable()" />
+                				<input type="text" data-bind="value: name, valueUpdate: 'afterkeydown', visible: editable()" />
 				    		</td>
 				    		<td>
 				    			<div data-bind="text: description"></div>
-                				<input type="text" data-bind="value: description, valueUpdate: 'afterkeydown', visible: $parent.Editable()" />
+                				<input type="text" data-bind="value: description, valueUpdate: 'afterkeydown', visible: editable()" />
 				    		</td>
-				    		<td><a href="#" data-bind="click: $parent.removeProduto">Deletar</a> <a href="#" data-bind="click: $parent.editProduto, text: $parent.Editable() ? 'Salvar' : 'Editar'"></a> </td>
+				    		<td>
+				    			<a href="#" data-bind="click: $parent.removeProduto">Deletar</a>
+				    			<!-- ko ifnot: editable() -->
+				    				<a href="#" data-bind="click: $parent.changeProductState, text: 'Editar'"></a>
+				    			<!-- /ko -->
+
+				    			<!-- ko if: editable() -->
+				    				<a href="#" data-bind="click: $parent.editProduto.bind($parent, $index), text: 'Salvar'"></a>
+				    			<!-- /ko -->
+				    		</td>
 				    	</tr>
 				    </tbody>
 				</table>
 			</div>
+			<!-- /ko -->
 		</div>
 	</div>
 </body>
