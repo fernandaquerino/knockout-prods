@@ -30,10 +30,9 @@
 		</nav>
 	</header> -->
 	<div class="main">
-		<h1 class="main__title">Cadastro de Produtos</h1>
 		<div class="container">
 			<div class="card card__cadastrar">
-				<h1>Cadastro</h1>
+				<h1>Cadastre o Produto</h1>
 				<div class="form">
 <!-- 					<label>Nome do Produto: </label> -->
 					<input type="text" placeholder="Nome" id="nomeProd" />
@@ -43,21 +42,29 @@
 				</div>
 			</div>
 			<div class="list">
+				<h1>Lista de Produtos</h1>
+				<span class="qtds">Você tem <span data-bind="text: produtos().length"></span> produtos na sua lista</span>
 				<table>
 					<thead>
 				        <tr>
-				        	<th>Id</th>
-				            <th>Produto</th>
-				            <th>Descrição</th>
-				            <th></th>
+				        	<th style="width: 15%;">Id</th>
+				            <th style="width: 30%;">Produto</th>
+				            <th style="width: 40%">Descrição</th>
+				            <th style="width: 15%;">Ações</th>
 				        </tr>
 				    </thead>
 				    <tbody data-bind="foreach: produtos">
 				    	<tr>
 				    		<td data-bind="text: $index"></td>
-				    		<td data-bind="text: name"></td>
-				    		<td data-bind="text: description"></td>
-				    		<!-- <td><a href="#" data-bind="click: $parent.removeProduto"></a></td> -->
+				    		<td>
+				    			<div data-bind="text: name"></div>
+                				<input type="text" data-bind="value: name, valueUpdate: 'afterkeydown', visible: $parent.Editable()" />
+				    		</td>
+				    		<td>
+				    			<div data-bind="text: description"></div>
+                				<input type="text" data-bind="value: description, valueUpdate: 'afterkeydown', visible: $parent.Editable()" />
+				    		</td>
+				    		<td><a href="#" data-bind="click: $parent.removeProduto">Deletar</a> <a href="#" data-bind="click: $parent.editProduto, text: $parent.Editable() ? 'Salvar' : 'Editar'"></a> </td>
 				    	</tr>
 				    </tbody>
 				</table>

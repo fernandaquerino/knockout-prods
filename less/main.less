@@ -24,6 +24,7 @@ body{
     	color: @white;
 	}
 	.main{
+		padding-top: 100px;
 		&__title{
 			text-align: center;
 			color: @oracle-color;
@@ -32,10 +33,14 @@ body{
 			font-weight: 300;
 		}
 		.container{
-			width: 400px;
+			width: 1200px;
 		    padding: 0 15px;
 		    margin: 0 auto;
+		    display: flex;
+		    flex-direction: row;
+		    justify-content: space-between;
 		    .card{
+		    	width: 400px;
 		    	position: relative;
 			    background: @white;
 			    border-radius: 5px;
@@ -48,7 +53,7 @@ body{
 				    margin: 0 0 35px;
 				    padding: 10px 0 10px 50px;
 				    color: @oracle-color;
-				    font-size: 30px;
+				    font-size: 27px;
 				    font-weight: 600;
 				    text-transform: uppercase;
 			    }
@@ -85,6 +90,61 @@ body{
 					    	color: @white;
 					    	border: 0;
 					    }
+			    	}
+			    }
+		    }
+		    .list{
+				width: 700px;
+		    	position: relative;
+			    background: @white;
+			    border-radius: 5px;
+			    padding: 25px 0px;
+			    box-sizing: border-box;
+			    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+			    h1{
+			    	margin: 0;
+				    border-left: 5px solid @oracle-color;
+				    margin: 0 0 20px;
+				    padding: 10px 0 10px 50px;
+				    color: @oracle-color;
+				    font-size: 27px;
+				    font-weight: 600;
+				    text-transform: uppercase;
+			    }
+			    .qtds{
+					text-align: right;
+				    display: block;
+				    margin-bottom: 20px;
+				    padding-right: 50px;
+				    font-size: 10px;
+				    color: @oracle-color;
+			    }
+			    table{
+			    	width: 100%;
+			    	padding: 0 35px;
+			    	thead{
+			    		border-bottom: 1px solid @oracle-color;
+			    		th{
+			    			color: @c-secondary;
+			    			font-family: @font-roboto;
+			    			text-transform: uppercase;
+			    			font-size: 18px;
+			    			font-weight: 300;
+			    		}
+			    	}
+			    	tbody{
+			    		text-align: center;
+			    		color: @oracle-color;
+		    			font-family: @font-roboto;
+		    			text-transform: capitalize;
+		    			font-size: 14px;
+		    			font-weight: 300;
+		    			td{
+		    				padding: 8px;
+						    line-height: 20px;
+						    vertical-align: top;
+						    border-top: 1px solid #ddd;
+		    			}
 			    	}
 			    }
 		    }

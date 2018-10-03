@@ -39,6 +39,9 @@ body .header {
   box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.26);
   color: #fff;
 }
+body .main {
+  padding-top: 100px;
+}
 body .main__title {
   text-align: center;
   color: #f80100;
@@ -47,11 +50,15 @@ body .main__title {
   font-weight: 300;
 }
 body .main .container {
-  width: 400px;
+  width: 1200px;
   padding: 0 15px;
   margin: 0 auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 body .main .container .card {
+  width: 400px;
   position: relative;
   background: #fff;
   border-radius: 5px;
@@ -65,7 +72,7 @@ body .main .container .card h1 {
   margin: 0 0 35px;
   padding: 10px 0 10px 50px;
   color: #f80100;
-  font-size: 30px;
+  font-size: 27px;
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -103,4 +110,59 @@ body .main .container .card .form button:hover {
   background-color: #f80100;
   color: #fff;
   border: 0;
+}
+body .main .container .list {
+  width: 700px;
+  position: relative;
+  background: #fff;
+  border-radius: 5px;
+  padding: 25px 0px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+body .main .container .list h1 {
+  margin: 0;
+  border-left: 5px solid #f80100;
+  margin: 0 0 20px;
+  padding: 10px 0 10px 50px;
+  color: #f80100;
+  font-size: 27px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+body .main .container .list .qtds {
+  text-align: right;
+  display: block;
+  margin-bottom: 20px;
+  padding-right: 50px;
+  font-size: 10px;
+  color: #f80100;
+}
+body .main .container .list table {
+  width: 100%;
+  padding: 0 35px;
+}
+body .main .container .list table thead {
+  border-bottom: 1px solid #f80100;
+}
+body .main .container .list table thead th {
+  color: #1B1D1D;
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 300;
+}
+body .main .container .list table tbody {
+  text-align: center;
+  color: #f80100;
+  font-family: 'Roboto', sans-serif;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 300;
+}
+body .main .container .list table tbody td {
+  padding: 8px;
+  line-height: 20px;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
 }
