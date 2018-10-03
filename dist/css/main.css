@@ -1,4 +1,106 @@
+/*Variaveis*/
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  src: local('Roboto Light'), local('Roboto-Light'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmSU5fBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Roboto'), local('Roboto-Regular'), url(https://fonts.gstatic.com/s/roboto/v18/KFOmCnqEu92Fr1Mu4mxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  src: local('Roboto Medium'), local('Roboto-Medium'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmEU9fBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Roboto Bold'), local('Roboto-Bold'), url(https://fonts.gstatic.com/s/roboto/v18/KFOlCnqEu92Fr1MmWUlfBBc9.ttf) format('truetype');
+}
 body {
   margin: 0;
-  background-color: #bada55;
+  background-color: #fff;
+  font-family: 'Roboto', sans-serif;
+}
+body .header {
+  position: fixed;
+  height: 100px;
+  left: 0;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background-color: #1B1D1D;
+  box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.26);
+  color: #fff;
+}
+body .main__title {
+  text-align: center;
+  color: #f80100;
+  font-size: 35px;
+  text-transform: uppercase;
+  font-weight: 300;
+}
+body .main .container {
+  width: 400px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+body .main .container .card {
+  position: relative;
+  background: #fff;
+  border-radius: 5px;
+  padding: 40px 0px;
+  box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+body .main .container .card h1 {
+  margin: 0;
+  border-left: 5px solid #f80100;
+  margin: 0 0 35px;
+  padding: 10px 0 10px 50px;
+  color: #f80100;
+  font-size: 30px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+body .main .container .card .form {
+  padding: 0px 50px;
+}
+body .main .container .card .form input,
+body .main .container .card .form label {
+  display: block;
+}
+body .main .container .card .form input {
+  outline: none;
+  background: none;
+  width: 100%;
+  height: 60px;
+  border: 0;
+  color: #212121;
+  font-size: 24px;
+  font-weight: 400;
+  border-bottom: 2px solid #f80100;
+}
+body .main .container .card .form button {
+  width: 100%;
+  border: 0;
+  height: 80px;
+  border: 1px solid #f80100;
+  margin-top: 50px;
+  font-size: 30px;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #f80100;
+}
+body .main .container .card .form button:hover {
+  background-color: #f80100;
+  color: #fff;
+  border: 0;
 }
